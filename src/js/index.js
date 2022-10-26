@@ -34,15 +34,25 @@ SimpleCounter.propTypes = {
     digitOne: PropTypes.number
 };
 
+
+
 let counter = 0; 
 setInterval(function(){
-    const six = Math.floor(counter/10000);
-    const five = Math.floor(counter/10000);
-    const four = Math.floor(counter/1000);
-    const three = Math.floor(counter/100);
-    const two = Math.floor(counter/10);
-    const one = Math.floor(counter/1);
+
+    let secondString = `00000${counter}`;
+	let display = secondString.slice(-6);
+
+    const six = display.charAt(0);
+    const five = display.charAt(1);
+    const four = display.charAt(2);
+    const three = display.charAt(3);
+    const two = display.charAt(4);
+    const one = display.charAt(5);
     console.log(six, five, four, three, two, one);
+    
+    
+    
+    
 
     counter++;
     ReactDOM.render(
